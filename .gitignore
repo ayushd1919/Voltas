@@ -2,3 +2,4 @@
 /voltas_cleaned.csv
 /voltas_featured.csv
 .venv
+.gitignore/config
