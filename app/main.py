@@ -19,19 +19,24 @@ EXPECTED_COLS = expected["expected_input_cols"]
 
 app = FastAPI(title="Voltas Availability API", version="1.0")
 
+
 class PredictRequest(BaseModel):
     records: List[Dict[str, Any]]
+
 
 class PredictResponse(BaseModel):
     predictions: List[int]
     labels: List[str]
     probabilities: Optional[List[float]] = None
 
+
 LABEL_MAP = {0: "In Stock", 1: "Out of Stock"}
+
 
 @app.get("/health")
 def health():
     return {"status": "ok", "expected_features": len(EXPECTED_COLS)}
+
 
 @app.post("/predict", response_model=PredictResponse)
 def predict(req: PredictRequest):
@@ -55,5 +60,6 @@ def predict(req: PredictRequest):
         raise HTTPException(500, f"Inference error: {e}")
 
     labels = [LABEL_MAP.get(int(p), str(p)) for p in preds]
-    return PredictResponse(predictions=[int(p) for p in preds],
-                           labels=labels, probabilities=proba)
+    return PredictResponse(
+        predictions=[int(p) for p in preds], labels=labels, probabilities=proba
+    )

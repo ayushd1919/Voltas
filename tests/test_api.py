@@ -3,11 +3,13 @@ from app.main import app
 
 client = TestClient(app)
 
+
 def test_health():
     r = client.get("/health")
     assert r.status_code == 200
     # ok when artifacts loaded, degraded when not (still acceptable)
     assert r.json()["status"] in {"ok", "degraded"}
+
 
 def test_predict_shape_when_artifacts_present():
     # This will pass only if artifacts are present (CI pulls via DVC or committed)
