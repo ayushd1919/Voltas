@@ -1,0 +1,5 @@
+outs:
+- md5: e7b3c25f1e51542ad58500f688764650
+  size: 730
+  hash: md5
+  path: expected_columns.json
