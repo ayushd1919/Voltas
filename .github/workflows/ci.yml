@@ -67,6 +67,12 @@ jobs:
           ls -R app/artifacts || true
       - name: Run tests
         run: pytest -q
+      - name: (Optional) Configure DVC service account
+        if: ${{ hashFiles('.dvc/config') != '' && env.GDRIVE_SA_JSON != '' }}
+        run: |
+          echo "$GDRIVE_SA_JSON" > sa.json
+          export GOOGLE_APPLICATION_CREDENTIALS=$PWD/sa.json
+          echo "GOOGLE_APPLICATION_CREDENTIALS=$PWD/sa.json" >> $GITHUB_ENV    
 
   docker-build:
     needs: test
