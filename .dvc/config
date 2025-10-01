@@ -4,3 +4,5 @@
     url = gdrive://17Smmd0RC2J9FrEmzZE6ijqoO5hkc4gKi
     gdrive_client_id = 535517379615-rlam6e0l1ttvs5f3ia0pr4h9kqcsn9gh.apps.googleusercontent.com
     gdrive_client_secret = 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
+    gdrive_use_service_account = true
+    gdrive_service_account_json_file_path = ../sa.json
