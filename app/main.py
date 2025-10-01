@@ -2,7 +2,9 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from typing import List, Dict, Any, Optional
 import pandas as pd
-import joblib, json, os
+import joblib
+import json
+import os
 
 APP_DIR = os.path.dirname(__file__)
 ART_DIR = os.path.join(APP_DIR, "artifacts")
