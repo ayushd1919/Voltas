@@ -1,0 +1,5 @@
+outs:
+- md5: 997b374c639d75e2a675187a74f8dd0c
+  size: 7578171
+  hash: md5
+  path: inference_pipeline.joblib

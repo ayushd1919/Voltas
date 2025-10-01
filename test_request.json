@@ -1,0 +1,37 @@
+{
+  "records": [
+    {
+      "product_id": "AC-001",
+      "product_category": "Air Conditioner",
+      "sub_type": "Split",
+      "model_name": "CoolX 1.5T",
+      "capacity_tons": 1.5,
+      "capacity_liters": null,
+      "capacity_kg": null,
+      "capacity_place_settings": null,
+      "technology": "Compressor Cooling",
+      "feature_1": "Inverter",
+      "energy_rating_stars": 5,
+      "color": "White",
+      "price_inr": 40990,
+      "manufacturing_date": "2024-03-01",
+      "warranty_years": 2,
+      "customer_rating": 4.4,
+      "city": "Mumbai",
+      "platform": "Croma",
+      "discount_offered": 12,
+      "warranty_duration_months": 24,
+      "review_sentiment": "positive",
+      "return_status": "No Return",
+      "complaint_text": "NA",
+      "resolved_status": "Resolved",
+      "review_date": "2024-05-10",
+      "reviewer_location": "Mumbai",
+      "product_name": "CoolX 1.5T Inverter",
+      "username": "user123",
+      "capacity_unified": 1.5,
+      "price_density_score": 0.62,
+      "warranty_quality_interaction": 1.24
+    }
+  ]
+}
