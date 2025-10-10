@@ -120,7 +120,8 @@ def psi(reference: pd.Series, current: pd.Series, bins: int = 10):
         return np.nan
     quantiles = np.linspace(0, 1, bins + 1)
     edges = np.quantile(ref, quantiles)
-    edges[0] -= 1e-9; edges[-1] += 1e-9
+    edges[0] -= 1e-9
+    edges[-1] += 1e-9
     ref_counts = np.histogram(ref, bins=edges)[0]
     cur_counts = np.histogram(cur, bins=edges)[0]
     ref_perc = np.where(ref_counts == 0, 1e-6, ref_counts) / max(1, ref_counts.sum())
@@ -128,9 +129,12 @@ def psi(reference: pd.Series, current: pd.Series, bins: int = 10):
     return float(np.sum((cur_perc - ref_perc) * np.log(cur_perc / ref_perc)))
 
 def model_type(model):
-    if isinstance(model, RandomForestClassifier): return "rf"
-    if isinstance(model, LogisticRegression): return "lr"
+    if isinstance(model, RandomForestClassifier):
+        return "rf"
+    if isinstance(model, LogisticRegression):
+        return "lr"
     return "other"
+
 
 def get_feature_names(preprocess):
     names = []
@@ -202,7 +206,9 @@ with tab_pred:
             # optional ground truth
             gt_col = None
             for c in ["availability", "Availability", "is_out_of_stock", "target"]:
-                if c in df_in.columns: gt_col = c; break
+                if c in df_in.columns:
+                    gt_col = c
+                    break
             if gt_col:
                 y_true_raw = df_in[gt_col].astype(str).str.lower().str.strip().map({
                     "in stock": 0, "instock": 0, "available": 0, "0": 0, "false": 0, "no": 0,
