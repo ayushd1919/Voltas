@@ -259,7 +259,7 @@ product descriptions, prices, reviews, ratings, promo views, and engagement metr
 """
     )
 
-    st.markdown("#### Full narrative (paste/edit)")
+    st.markdown("#### Full narrative")
     st.text_area(
         "Problem narrative",
         height=260,
